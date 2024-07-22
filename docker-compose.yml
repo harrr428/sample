@@ -9,9 +9,11 @@ services:
     # 一応コンテナ名をつける
     ports:
       - '3000:3000'
+      - usr/src/app/node_modules #追記
       # docker run -p 3000:3000 app と一緒
     volumes:
       - './app:/usr/src/app'
+      - usr/src/app/node_modules #追記
       # ローカルPCの./appフォルダと、コンテナ内の ~/usr/src/appフォルダを同期させる。
       # docker exec -it express-app sh で確認できる
 
